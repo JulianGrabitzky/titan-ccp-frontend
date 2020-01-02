@@ -8,9 +8,10 @@ import SensorDetails from "./components/SensorDetails.vue"
 import Comparison from "./components/Comparison.vue"
 import Configuration from "./components/Configuration.vue"
 import Examples from "./components/Examples.vue"
+import Ksql from "./components/Ksql.vue" //Add my Component 
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTachometerAlt, faChartBar, faBalanceScale, faSlidersH, faPlay, faMinus, faArrowRight, faPen, faTrash, faSpinner, faChartLine, faCog, faTimes, faPause, faCheck, faHistory } from '@fortawesome/free-solid-svg-icons'
+import { faTachometerAlt, faChartBar, faBalanceScale, faSlidersH, faPlay, faMinus, faArrowRight, faPen, faTrash, faSpinner, faChartLine, faCog, faTimes, faPause, faCheck, faHistory, faTerminal } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 if (process.env.DEMO === "true") {
@@ -22,7 +23,7 @@ if (process.env.SHOW_COMPLETE_HISTORY === "true") {
 
 Vue.use(BootstrapVue);
 
-library.add(faTachometerAlt, faChartBar, faBalanceScale, faSlidersH, faPlay, faMinus, faArrowRight, faPen, faTrash, faSpinner, faChartLine, faCog, faTimes, faPause, faCheck, faHistory)
+library.add(faTachometerAlt, faChartBar, faBalanceScale, faSlidersH, faPlay, faMinus, faArrowRight, faPen, faTrash, faSpinner, faChartLine, faCog, faTimes, faPause, faCheck, faHistory, faTerminal)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 //Vue.config.productionTip = false
 
@@ -47,6 +48,7 @@ const routes = [
   { path: '/sensor-details', component: SensorDetails },
   { path: '/comparison', component: Comparison },
   { path: '/configuration', component: Configuration },
+  { path: '/ksql', component: Ksql },
   { path: '/examples', component: Examples }
 ]
 
