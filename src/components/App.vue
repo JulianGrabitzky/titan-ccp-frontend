@@ -56,6 +56,11 @@
                   <font-awesome-icon icon="sliders-h" fixed-width class="feather" />Configuration
                 </router-link>
               </li>
+              <li class="nav-item">
+                <router-link to="/ksql" class="nav-link">
+                  <font-awesome-icon icon="terminal" fixed-width class="feather" />KSQL
+                </router-link>
+              </li>
             </ul>
           </div>
         </nav>
