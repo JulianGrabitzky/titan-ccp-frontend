@@ -21,6 +21,11 @@
           <show-query></show-query>
         </b-col>
       </b-row>
+      <b-row class="mb-4">
+        <b-col>
+          <sql></sql>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -37,13 +42,15 @@ import ShowTopic from "./ksql-components/ShowTopic.vue";
 import ShowStream from "./ksql-components/ShowStream.vue";
 import ShowTable from "./ksql-components/ShowTable.vue";
 import ShowQuery from "./ksql-components/ShowQuery.vue";
+import Sql from "./ksql-components/Sql.vue";
 
 @Component({
   components: {
     ShowTopic,
     ShowStream,
     ShowTable,
-    ShowQuery
+    ShowQuery,
+    Sql
   }
 })
 export default class Ksql extends Vue {}
