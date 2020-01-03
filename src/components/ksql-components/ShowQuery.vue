@@ -6,7 +6,7 @@
         <b-button v-b-toggle.collapse-query variant="success" size="sm">Show Queries</b-button>
         <b-collapse id="collapse-query" class="mt-2">
           <b-card>
-            <b-table striped=" hover" :items="topic"></b-table>
+            <b-table striped hover :items="query"></b-table>
           </b-card>
         </b-collapse>
       </div>

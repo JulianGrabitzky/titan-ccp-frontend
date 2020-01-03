@@ -6,7 +6,7 @@
         <b-button v-b-toggle.collapse-table variant="success" size="sm">Show Tables</b-button>
         <b-collapse id="collapse-table" class="mt-2">
           <b-card>
-            <b-table striped=" hover" :items="table"></b-table>
+            <b-table striped hover :items="table"></b-table>
           </b-card>
         </b-collapse>
       </div>

@@ -6,7 +6,7 @@
         <b-button v-b-toggle.collapse-stream variant="success" size="sm">Show Streams</b-button>
         <b-collapse id="collapse-stream" class="mt-2">
           <b-card>
-            <b-table striped=" hover" :items="stream"></b-table>
+            <b-table striped hover :items="stream"></b-table>
           </b-card>
         </b-collapse>
       </div>
