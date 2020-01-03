@@ -6,7 +6,7 @@
         <b-button v-b-toggle.collapse-topic variant="success" size="sm">Show Topics</b-button>
         <b-collapse id="collapse-topic" class="mt-2">
           <b-card>
-            <b-table striped=" hover" :items="topic"></b-table>
+            <b-table striped hover :items="topic"></b-table>
           </b-card>
         </b-collapse>
       </div>
@@ -20,6 +20,7 @@ import { KSQL } from "../../http-common";
 export default {
   data() {
     return {
+      selected: [],
       topic: null
     };
   },
@@ -28,6 +29,8 @@ export default {
     KSQL.post(`ksql`, {
       ksql: "SHOW TOPICS;"
     }).then(response => (this.topic = response.data[0].topics));
-  }
+  },
+
+  methods: {}
 };
 </script>

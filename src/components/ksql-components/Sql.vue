@@ -21,7 +21,7 @@
                     </b-form>
                   </div>
                   <b-card class="mt-3" header="Result">
-                    <li v-for="info in result">{{ info }}</li>
+                    <li v-for="info in result" :key="info">{{ info }}</li>
                   </b-card>
                 </b-col>
               </b-row>

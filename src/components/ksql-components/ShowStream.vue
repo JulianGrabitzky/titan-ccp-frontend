@@ -6,7 +6,26 @@
         <b-button v-b-toggle.collapse-stream variant="success" size="sm">Show Streams</b-button>
         <b-collapse id="collapse-stream" class="mt-2">
           <b-card>
-            <b-table striped hover :items="stream"></b-table>
+            <b-table striped hover :items="stream" :fields="fields">
+              <template v-slot:cell(show_details)="row">
+                <b-button
+                  size="sm"
+                  @click="getDetailedData(row.item.name); row.toggleDetails();"
+                  class="mr-2"
+                >{{ row.detailsShowing ? 'Hide' : 'Show'}} Details</b-button>
+              </template>
+
+              <template v-slot:row-details="row">
+                <b-card class="mt-3">
+                  <!--
+                    These are the most imporant parts of the json object.
+                    next step would be a more complex representation.
+                  -->
+                  <li>SQL String: {{ detailedStreamInfo.writeQueries[0].queryString }}</li>
+                  <li v-for="info in detailedStreamInfo.fields" :key="info">{{ info }}</li>
+                </b-card>
+              </template>
+            </b-table>
           </b-card>
         </b-collapse>
       </div>
@@ -20,7 +39,9 @@ import { KSQL } from "../../http-common";
 export default {
   data() {
     return {
-      stream: null
+      fields: ["type", "name", "topic", "show_details"],
+      stream: null,
+      detailedStreamInfo: []
     };
   },
 
@@ -28,6 +49,18 @@ export default {
     KSQL.post(`ksql`, {
       ksql: "SHOW STREAMS;"
     }).then(response => (this.stream = response.data[0].streams));
+  },
+
+  methods: {
+    getDetailedData(streamName) {
+      console.log(streamName);
+      KSQL.post(`ksql`, {
+        ksql: "DESCRIBE " + streamName + ";"
+      }).then(
+        response =>
+          (this.detailedStreamInfo = response.data[0].sourceDescription)
+      );
+    }
   }
 };
 </script>
