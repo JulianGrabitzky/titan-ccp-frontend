@@ -1,4 +1,4 @@
-# Titan Control Center - Visualization Frontend
+# Titan Control Center - Visualization Frontend (My variant)
 
 The [Titan Control Center](https://ieeexplore.ieee.org/abstract/document/8822045)
 is a scalable monitoring infrastructure for [Industrial DevOps](https://industrial-devops.org/).
@@ -8,7 +8,7 @@ devices and machines in industrial production environments.
 This repository contains the visualization frontend of the Titan Control Center. It is a
 single-page application written in Typescript and Vue.js.
 
-The Docker Image for the frontend in the other project (docker-compose-allInOne.yml) should work. If not.. please use the dev server to test it.
+## The Docker Image for the frontend in the other project (docker-compose-allInOne.yml) should work. If not.. please use the dev server to test it.
 
 ## Developing
 
