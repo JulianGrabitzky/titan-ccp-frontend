@@ -21,8 +21,12 @@
                     These are the most imporant parts of the json object.
                     next step would be a more complex representation.
                   -->
-                  <li>SQL String: {{ detailedStreamInfo.writeQueries[0].queryString }}</li>
-                  <li v-for="info in detailedStreamInfo.fields" :key="info">{{ info }}</li>
+                  <b-card header="SQL">
+                    <ul>{{ detailedStreamInfo.readQueries[0].queryString }}</ul>
+                  </b-card>
+                  <b-card header="Fields">
+                    <ul v-for="info in detailedStreamInfo.fields" :key="info">{{ info }}</ul>
+                  </b-card>
                 </b-card>
               </template>
             </b-table>
@@ -53,7 +57,6 @@ export default {
 
   methods: {
     getDetailedData(streamName) {
-      console.log(streamName);
       KSQL.post(`ksql`, {
         ksql: "DESCRIBE " + streamName + ";"
       }).then(

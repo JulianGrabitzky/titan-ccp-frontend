@@ -26,6 +26,11 @@
           <sql></sql>
         </b-col>
       </b-row>
+      <b-row class="mb-4">
+        <b-col>
+          <power-consumption-table></power-consumption-table>
+        </b-col>
+      </b-row>
     </b-container>
   </div>
 </template>
@@ -43,6 +48,7 @@ import ShowStream from "./ksql-components/ShowStream.vue";
 import ShowTable from "./ksql-components/ShowTable.vue";
 import ShowQuery from "./ksql-components/ShowQuery.vue";
 import Sql from "./ksql-components/Sql.vue";
+import PowerConsumptionTable from "./ksql-components/PowerConsumptionTable.vue";
 
 @Component({
   components: {
@@ -50,7 +56,8 @@ import Sql from "./ksql-components/Sql.vue";
     ShowStream,
     ShowTable,
     ShowQuery,
-    Sql
+    Sql,
+    PowerConsumptionTable
   }
 })
 export default class Ksql extends Vue {}

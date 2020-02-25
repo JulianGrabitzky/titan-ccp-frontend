@@ -63,7 +63,6 @@ export default {
 
   methods: {
     getDetailedData(queryName) {
-      console.log(queryName);
       KSQL.post(`ksql`, {
         ksql: "Explain " + queryName + ";"
       }).then(

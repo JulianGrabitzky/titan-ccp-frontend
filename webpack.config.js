@@ -74,8 +74,6 @@ module.exports = {
     proxy: {
       '/api': {
         target: 'http://144.91.117.148:8185'
-        //target: 'http://samoa.se.informatik.uni-kiel.de:8185'
-        // target: 'http://localhost:8080'
       },
       '/ksql': {
         target: 'http://144.91.117.148:8088'
