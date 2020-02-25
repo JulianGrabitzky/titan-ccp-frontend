@@ -39,7 +39,7 @@ the other services. We provide such a reverse proxy as part of the frontend,
 which can be started be started via:
 
 ```shell
-docker run --rm --name titan-ccp-frontend --network host -e "CONFIGURATION_BASE_URL=http://<host>:<port>" -e "HISTORY_BASE_URL=http://<host>:<port>" -e "STATS_BASE_URL=http://<host>:<port>" -d industrialdevops/titan-ccp-frontend
+docker run --rm --name titan-ccp-frontend --network host -e "CONFIGURATION_BASE_URL=http://<host>:<port>" -e "HISTORY_BASE_URL=http://<host>:<port>" -e "STATS_BASE_URL=http://<host>:<port>" -e "KSQL_SERVER_BASE_URL=http://<host>:<port>" -d industrialdevops/titan-ccp-frontend
 ```
 
 Note: The application intendet for development is running at port 8070, whereas a the
@@ -61,11 +61,3 @@ can then be copied on a web server for productive usage.
 This repository also contains a Dockerfile. Adjust the `nginx.conf` file accordingly
 and run `docker build -t titan-ccp-frontend .` to create an image from it (after
 building it with npm).
-
-## Running
-
-To start a container execute:
-
-```shell
-docker run --rm --name titan-ccp-frontend -p <port>:8080 -e "CONFIGURATION_BASE_URL=http://<host>:<port>" -e "HISTORY_BASE_URL=http://<host>:<port>" -d titan-ccp-frontend
-```
