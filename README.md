@@ -8,7 +8,7 @@ devices and machines in industrial production environments.
 This repository contains the visualization frontend of the Titan Control Center. It is a
 single-page application written in Typescript and Vue.js.
 
-# The Docker Image is currently not working. Use the developer server and change the webpack.config.js if needed
+The Docker Image for the frontend in the other project (docker-compose-allInOne.yml) should work. If not.. please use the dev server to test it.
 
 ## Developing
 
